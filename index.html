@@ -185,22 +185,45 @@ color:#666;
 }
 
 .btn{
-margin-top:15px;
 width:100%;
+margin-top:15px;
 padding:14px;
+
 border:none;
 border-radius:50px;
-cursor:pointer;
-font-weight:bold;
+
 font-size:15px;
+font-weight:700;
 color:white;
-background:linear-gradient(45deg,#00a8ff,#00d2ff);
-transition:.3s;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+90deg,
+#00e5ff,
+#00a2ff,
+#7c4dff,
+#ff00ea
+);
+
+background-size:300% 300%;
+animation:rgbMove 4s linear infinite;
+
+box-shadow:
+0 0 15px rgba(0,170,255,.35);
+
+transition:.25s;
 }
 
 .btn:hover{
-transform:scale(1.05);
-box-shadow:0 0 20px rgba(0,170,255,.5);
+transform:
+translateY(-3px)
+scale(1.03);
+}
+
+.btn:active{
+transform:scale(.92);
 }
 
 .footer{
@@ -249,6 +272,114 @@ padding:15px;
 }
 
 }
+
+.social-buttons{
+display:flex;
+justify-content:center;
+gap:15px;
+margin:15px 20px 25px;
+flex-wrap:wrap;
+}
+
+.social-btn{
+position:relative;
+overflow:hidden;
+
+padding:14px 28px;
+border:none;
+border-radius:50px;
+
+font-size:15px;
+font-weight:700;
+color:white;
+
+cursor:pointer;
+
+background:linear-gradient(
+90deg,
+#00e5ff,
+#00a2ff,
+#7c4dff,
+#ff00ea
+);
+
+background-size:300% 300%;
+animation:rgbMove 5s linear infinite;
+
+box-shadow:
+0 0 15px rgba(0,170,255,.4),
+0 0 30px rgba(124,77,255,.25);
+
+transition:.25s;
+}
+
+.social-btn:hover{
+transform:translateY(-4px) scale(1.05);
+}
+
+.social-btn:active{
+transform:scale(.92);
+}
+
+.social-btn::before{
+content:'';
+position:absolute;
+top:-50%;
+left:-50%;
+width:200%;
+height:200%;
+background:
+linear-gradient(
+120deg,
+transparent,
+rgba(255,255,255,.4),
+transparent
+);
+transform:rotate(25deg);
+animation:shine 3s infinite;
+}
+
+@keyframes rgbMove{
+0%{
+background-position:0% 50%;
+}
+50%{
+background-position:100% 50%;
+}
+100%{
+background-position:0% 50%;
+}
+}
+
+@keyframes shine{
+0%{
+left:-120%;
+}
+100%{
+left:120%;
+}
+}
+
+.discord{
+background:
+linear-gradient(
+90deg,
+#5865F2,
+#7289DA,
+#5865F2
+);
+}
+
+.zalo{
+background:
+linear-gradient(
+90deg,
+#0068ff,
+#00a2ff,
+#0068ff
+);
+}
+
 </style>
 </head>
 
@@ -264,12 +395,28 @@ padding:15px;
 <input type="text" id="search" placeholder="🔍 Tìm kiếm ...">
 </div>
 
+<div class="social-buttons">
+
+<button
+class="social-btn discord"
+onclick="openDiscord()">
+💬 Discord
+</button>
+
+<button
+class="social-btn zalo"
+onclick="openZalo()">
+📱 Zalo
+</button>
+
+</div>
+
 <div class="cards">
 
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1516394774637318194/IMG_2130.png?ex=6a327c2f&is=6a312aaf&hm=ae067f49389d623e2a2c589249fbdbf054190620436629a707707ad32dfbf204&">
+<img src="https://i.ibb.co/7J9wj54k/IMG-2133.png">
 </div>
 <h3>FF IPA</h3>
 <div class="desc">📁 Menu AimBot Esp Vv ; Esign [ 17 - 18.7.1 ]<br>⏳ 16/6/2026 | OB 53
@@ -283,7 +430,7 @@ onclick="downloadFile('https://www.mediafire.com/file/luuim9p3wjnn59l/FF_Menu_ro
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1515554336049074348/IMG_0934.png?ex=6a2f6d77&is=6a2e1bf7&hm=305918786dbbf46b606c59c57909986b05e2d8845faa9f500d7e5f9c647a3eb8&">
+<img src="https://i.ibb.co/wNVSsjY0/IMG-0934.png">
 </div>
 <h3>FF External</h3>
 <div class="desc">📁 Menu AimBot Esp Vv ; TrollStore[ 12 - 16.7.15 ]<br>⏳ 14/6/2026 | OB 53
@@ -297,7 +444,7 @@ onclick="downloadFile('https://www.mediafire.com/file/q99orfhsxeofct3/FFExternal
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513518698147614821/IMG_0860.jpg?ex=6a2805a1&is=6a26b421&hm=3dcb9a2124ab9f9a95775a80dbb64358e47bd1222c77aaef04a7412cccfce93e&">
+<img src="https://i.ibb.co/tpP9GY4K/IMG-0860.jpg">
 </div>
 <h3>Mod M1887 V2</h3>
 <div class="desc">
@@ -316,7 +463,7 @@ onclick="downloadFile('https://www.mediafire.com/file/vse6y02ozfr59z0/FFM_%252B_
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513518822953324584/IMG_0859.jpg?ex=6a2805bf&is=6a26b43f&hm=5b6a3914f428a649891ecc89d9addfeb8b545f10353f12a6051d9b627ddd6f61&">
+<img src="https://i.ibb.co/5X556bHr/IMG-0859.jpg">
 </div>
 <h3>Mod M1887 V1</h3>
 <div class="desc">
@@ -335,7 +482,7 @@ onclick="downloadFile('https://www.mediafire.com/file/meuy9w3kr12oc6m/FFM_%252B_
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513409946585141258/IMG_3998.png?ex=6a27a059&is=6a264ed9&hm=16f620be6246b3e8ae86262730e0b4b7447c8c4673b9758d8216a2d92a871015&">
+<img src="https://i.ibb.co/F4KFGczn/IMG-3998.png">
 </div>
 <h3>Holo imz</h3>
 <div class="desc">
@@ -350,7 +497,7 @@ onclick="downloadFile('https://www.mediafire.com/file/85ixn6bfw9b1ydg/FFTH+Đvi+
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513241565559128256/IMG_3994.png?ex=6a270387&is=6a25b207&hm=5d8da752aa5bade760611661621af322e87947622cbbc5552b74b9f567c418b2&">
+<img src="https://i.ibb.co/506GWPb/IMG-3994.png">
 </div>
 <h3>Holo Filza</h3>
 <div class="desc">
@@ -365,7 +512,7 @@ onclick="downloadFile('https://www.mediafire.com/file/2a93mwj6go4iea3/FFTH+Đvi+
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513034862561595494/IMG_0846.png?ex=6a264306&is=6a24f186&hm=4a76f6f3751b03d718716dec93634ad14c1f4df3cf064a0b7890bf124f4e85fc&">
+<img src="https://i.ibb.co/7x51H6h9/IMG-0846.png">
 </div>
 <h3>FFTH AimR8</h3>
 <div class="desc">
@@ -380,7 +527,7 @@ onclick="downloadFile('https://www.mediafire.com/file/fu6085at60vauow/cache_res.
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513032000557158540/IMG_0845.png?ex=6a26405b&is=6a24eedb&hm=a91cb189b4997080be15fd947ad6c610e0c6650949270f44672cfa4d0e886de5&">
+<img src="https://i.ibb.co/7tnmKXjN/IMG-0845.png">
 </div>
 <h3>FFTH AimMagic</h3>
 <div class="desc">
@@ -395,7 +542,7 @@ onclick="downloadFile('https://www.mediafire.com/file/0g3x7c2hyby6q99/cache_res.
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1512997282247868546/IMG_0842.png?ex=6a262006&is=6a24ce86&hm=1082a798d0b1c3d7d0f3c8defac8583730530196a0465f7e68173aca9f82efbc&">
+<img src="https://i.ibb.co/nsqJfyTR/IMG-0842.png">
 </div>
 <h3>FFM Nhẹ Tâm</h3>
 <div class="desc">
@@ -410,7 +557,7 @@ onclick="downloadFile('https://www.mediafire.com/file/yvwwsqjjnom35x9/FFM_Nhe%25
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1513002448888004678/IMG_0844.png?ex=6a2624d6&is=6a24d356&hm=1bb69d5096a239011e29aa6bfe78b1b0140ef92f02cd1adcf4a62edc90ac2468&">
+<img src="https://i.ibb.co/5g1Qx07G/IMG-0844.png">
 </div>
 <h3>FFTH AimBody</h3>
 <div class="desc">
@@ -425,7 +572,7 @@ onclick="downloadFile('https://www.mediafire.com/file/95tcz9z3kr2zivv/cache_res.
 <div class="card">
 <div class="badge hot">HOT</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1512896784324890684/IMG_0834.jpg?ex=6a25c26d&is=6a2470ed&hm=ffbfd7ebcaf3f06d7ff02cb352fe951ddf1f3b4cc66cade4ee5e8785cf159ac1&">
+<img src="=https://i.ibb.co/DgL8WGwk/IMG-0834.jpg">
 </div>
 <h3>Mod M1887 + MP40</h3>
 <div class="desc">
@@ -440,7 +587,7 @@ onclick="downloadFile('https://www.mediafire.com/file/nkfuzzi2ot51wvc/FFTH_Mod_M
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1512896685569867847/IMG_0836.png?ex=6a25c256&is=6a2470d6&hm=de7b7040f23a4db009ad75cd67792eaf81dd0ddc7fface5c52f8db336a644eaa&2">
+<img src="https://i.ibb.co/YB0ZZ0Qj/IMG-0836.png">
 </div>
 <h3>Mod Alock_1</h3>
 <div class="desc">
@@ -455,7 +602,7 @@ onclick="downloadFile('https://www.mediafire.com/file/j92u6en9dowh4dv/FFTH_Mod_A
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1512896736366956644/IMG_0835.png?ex=6a25c262&is=6a2470e2&hm=0927612a97d06a5d2a985ec2a13477177ef75cb67741784d2d5e8e48860b50db&">
+<img src="https://i.ibb.co/5gV79RsJ/IMG-0835.png">
 </div>
 <h3>Mod Ignis_1</h3>
 <div class="desc">
@@ -470,7 +617,7 @@ onclick="downloadFile('https://www.mediafire.com/file/ho88dvhbzeey1r2/FFTH_Mod_I
 <div class="card">
 <div class="badge new">NEW</div>
 <div class="icon">
-<img src="https://cdn.discordapp.com/attachments/1488240958712709291/1512898723024470076/IMG_0837.png?ex=6a25c43b&is=6a2472bb&hm=2813642bfa86cc913e776bdb4678ac598abdb1b9fff2d322da75b9fe00be5c65&">
+<img src="https://i.ibb.co/wF1SvxHP/IMG-0837.png">
 </div>
 <h3>Mod M590</h3>
 <div class="desc">
@@ -512,7 +659,41 @@ document
     });
 
 });
+function openDiscord(){
 
+const btn =
+event.currentTarget;
+
+btn.style.transform =
+"scale(.85)";
+
+setTimeout(()=>{
+window.open(
+"https://discord.gg/m4xjNK93u",
+"_blank"
+);
+btn.style.transform="";
+},200);
+
+}
+
+function openZalo(){
+
+const btn =
+event.currentTarget;
+
+btn.style.transform =
+"scale(.85)";
+
+setTimeout(()=>{
+window.open(
+"https://zalo.me/0911398550",
+"_blank"
+);
+btn.style.transform="";
+},200);
+
+}
 </script>
 
 </body>
